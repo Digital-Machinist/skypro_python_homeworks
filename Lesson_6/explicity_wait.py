@@ -9,14 +9,14 @@ options.add_argument('--ignore-certificate-errors')
 options.add_argument('--allow-insecure-localhost')
 browser = webdriver.Chrome(options=options, service=ChromeService(
     ChromeDriverManager().install()))
-waiter = WebDriverWait (browser, 40, 0.01)
+waiter = WebDriverWait(browser, 40, 0.01)
 
 browser.get('https://uitestingplayground.com/progressbar')
 
 browser.find_element(By.CSS_SELECTOR, '#startButton').click()
 
 waiter.until(
-    EC.text_to_be_present_in_element((By.CSS_SELECTOR,"#progressBar"), "75%")
+    EC.text_to_be_present_in_element((By.CSS_SELECTOR, "#progressBar"), "75%")
 )
 
 browser.find_element(By.CSS_SELECTOR, '#stopButton').click()

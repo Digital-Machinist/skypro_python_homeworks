@@ -9,32 +9,49 @@ browser = webdriver.Chrome(service=ChromeService(
 
 browser.get('https://ya.ru')
 
-txt = browser.find_element(By.CSS_SELECTOR, 'a[data-statlog="2informers.stocks.item.300000000101470118"]').text
+txt = browser.find_element(
+    By.CSS_SELECTOR,
+    'a[data-statlog="2informers.stocks.item.300000000101470118"]').text
 print(txt)
 
-tag = browser.find_element(By.CSS_SELECTOR, 'a[data-statlog="2informers.stocks.item.300000000101470118"]').tag_name
+tag = browser.find_element(
+    By.CSS_SELECTOR,
+    'a[data-statlog="2informers.stocks.item.300000000101470118"]').tag_name
 print(tag)
 
-id = browser.find_element(By.CSS_SELECTOR, 'a[data-statlog="2informers.stocks.item.300000000101470118"]').id
+id = browser.find_element(
+    By.CSS_SELECTOR,
+    'a[data-statlog="2informers.stocks.item.300000000101470118"]').id
 print(id)
 
-href = browser.find_element(By.CSS_SELECTOR, 'a[data-statlog="2informers.stocks.item.300000000101470118"]').get_attribute('href')
+href = browser.find_element(
+    By.CSS_SELECTOR,
+    'a[data-statlog="2informers.stocks.item.300000000101470118"]'
+    ).get_attribute('href')
 print(href)
 
-ff = browser.find_element(By.CSS_SELECTOR, 'a[data-statlog="2informers.stocks.item.300000000101470118"]').value_of_css_property('font-family')
+ff = browser.find_element(
+    By.CSS_SELECTOR,
+    'a[data-statlog="2informers.stocks.item.300000000101470118"]'
+    ).value_of_css_property('font-family')
 print(ff)
 
-color = browser.find_element(By.CSS_SELECTOR, 'a[data-statlog="2informers.stocks.item.300000000101470118"]').value_of_css_property('color')
+color = browser.find_element(
+    By.CSS_SELECTOR,
+    'a[data-statlog="2informers.stocks.item.300000000101470118"]'
+    ).value_of_css_property('color')
 print(color)
 
 browser.get('http://uitestingplayground.com/visibility')
 
-isDisplayed = browser.find_element(By.CSS_SELECTOR, '#transparentButton').is_displayed()
+isDisplayed = browser.find_element(
+    By.CSS_SELECTOR, '#transparentButton').is_displayed()
 print(isDisplayed)
 
 browser.find_element(By.CSS_SELECTOR, '#hideButton').click()
 
-isDisplayed = browser.find_element(By.CSS_SELECTOR, '#transparentButton').is_displayed()
+isDisplayed = browser.find_element(
+    By.CSS_SELECTOR, '#transparentButton').is_displayed()
 print(isDisplayed)
 
 browser.get('https://demoqa.com/radio-button')

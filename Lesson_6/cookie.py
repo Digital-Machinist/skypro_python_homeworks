@@ -7,7 +7,7 @@ browser = webdriver.Chrome(service=ChromeService(
     ChromeDriverManager().install()))
 
 my_cookie = {
-    'name':'cookie_policy',
+    'name': 'cookie_policy',
     'value': '1'
 }
 
