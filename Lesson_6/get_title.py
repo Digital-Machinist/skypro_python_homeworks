@@ -3,9 +3,13 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 
-driver = webdriver.Chrome(service=ChromeService(
+browser = webdriver.Chrome(service=ChromeService(
     ChromeDriverManager().install()))
 
-driver.get("https://ya.ru")
+browser.get('https://ya.ru')
 
-sleep(5)
+current_title = browser.title
+
+print(current_title)
+
+browser.quit()
