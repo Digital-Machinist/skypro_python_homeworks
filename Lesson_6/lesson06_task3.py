@@ -9,9 +9,10 @@ options.add_argument('--ignore-certificate-errors')
 options.add_argument('--allow-insecure-localhost')
 browser = webdriver.Chrome(options=options, service=ChromeService(
     ChromeDriverManager().install()))
-waiter = WebDriverWait (browser, 10)
+waiter = WebDriverWait(browser, 10)
 
-browser.get('https://bonigarcia.dev/selenium-webdriver-java/loading-images.html')
+browser.get(
+    'https://bonigarcia.dev/selenium-webdriver-java/loading-images.html')
 
 award = waiter.until(
     EC.visibility_of_element_located((By.CSS_SELECTOR, '#award'))
