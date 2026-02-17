@@ -31,7 +31,7 @@ def fill_form(driver):
     wait.until(EC.presence_of_element_located(
         (By.ID, 'delay'))).clear()
     wait.until(EC.presence_of_element_located(
-        (By.ID, 'delay'))).send_keys('3')
+        (By.ID, 'delay'))).send_keys('45')
 
     buttons = [
         '//span[text()="7"]', '//span[text()="+"]', '//span[text()="8"]',
@@ -47,4 +47,4 @@ def fill_form(driver):
 
 def test_calculator_sum_result(fill_form):
     final_text = fill_form.find_element(By.CLASS_NAME, 'screen').text
-    assert final_text == '15', f"Ожидали 15, но на экране {final_text}"
+    assert final_text == '15'
