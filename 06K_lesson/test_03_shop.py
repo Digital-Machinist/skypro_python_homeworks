@@ -10,7 +10,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 @pytest.fixture(scope='module')
 def ff():
-    options = webdriver.ChromeOptions()
+    options = webdriver.FirefoxOptions()
     options.add_argument("--no-default-browser-check")
     options.add_argument("--disable-first-run-ui")
     options.add_argument('--ignore-certificate-errors')
@@ -53,9 +53,9 @@ def get_result(ff):
         '#postal-code': '600006'
     }
 
-    for data1, data2 in data_2.items():
+    for field, value in data_2.items():
         wait.until(EC.visibility_of_element_located(
-            (By.CSS_SELECTOR, data1))).send_keys(data2)
+            (By.CSS_SELECTOR, field))).send_keys(value)
 
     ff.find_element(By.ID, 'continue').click()
     return ff
