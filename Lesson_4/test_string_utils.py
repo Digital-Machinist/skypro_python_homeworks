@@ -1,9 +1,11 @@
-import pytest # type: ignore
+import pytest
 from string_utils import StringUtils
 
 string_utils = StringUtils()
 
 # capitalize func
+
+
 @pytest.mark.positive
 @pytest.mark.parametrize("input_str, expected", [
     ("skypro", "Skypro"),
@@ -24,6 +26,8 @@ def test_capitalize_negative(input_str, expected):
     assert string_utils.capitalize(input_str) == expected
 
 # trim func
+
+
 @pytest.mark.positive
 @pytest.mark.parametrize("input_str, expected", [
     ("    Skypro", "Skypro"),
@@ -44,6 +48,8 @@ def test_trim_negative(input_str, expected):
     assert string_utils.trim(input_str) == expected
 
 # contains func
+
+
 @pytest.mark.positive
 @pytest.mark.parametrize("input_str, symbol, expected", [
     ("SkyPro", "S", True),
@@ -55,21 +61,24 @@ def test_trim_negative(input_str, expected):
 def test_contains_positive(input_str, symbol, expected):
     assert string_utils.contains(input_str, symbol) == expected
 
+
 @pytest.mark.negative
 @pytest.mark.parametrize("input_str, symbol, expected", [
-    #проверка только пробела
+    # проверка только пробела
     (" ", " ", True),
-    #проверка пустой строки
+    # проверка пустой строки
     ("", "", True),
-    #проверка поиска символов на разных языках
+    # проверка поиска символов на разных языках
     ("Symbоl", "o", False),
-    #проверка поиска символа из 2х знаков
+    # проверка поиска символа из 2х знаков
     ("`~!@#$%^&*()_+", "`~", True)
 ])
 def test_contains_negative(input_str, symbol, expected):
     assert string_utils.contains(input_str, symbol) == expected
 
 # delete symbol func
+
+
 @pytest.mark.positive
 @pytest.mark.parametrize("input_str, symbol, expected", [
     ("SkyPro", "S", "kyPro"),
@@ -81,13 +90,14 @@ def test_contains_negative(input_str, symbol, expected):
 def test_delete_symbol_positive(input_str, symbol, expected):
     assert string_utils.delete_symbol(input_str, symbol) == expected
 
+
 @pytest.mark.negative
 @pytest.mark.parametrize("input_str, symbol, expected", [
-    #проверка удаления только пробела
+    # проверка удаления только пробела
     (" ", " ", ""),
-    #проверка удаления пустой строки
+    # проверка удаления пустой строки
     (" ", "", " "),
-    #проверка удаления подложенного символа на другом языке
+    # проверка удаления подложенного символа на другом языке
     ("Symbоl", "o", "Symbоl")
 ])
 def test_delete_symbol_negative(input_str, symbol, expected):
