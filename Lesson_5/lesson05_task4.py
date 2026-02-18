@@ -21,7 +21,7 @@ passwordField.send_keys('SuperSecretPassword!')
 sleep(1)
 loginButton = driver.find_element(By.CSS_SELECTOR, '.fa-sign-in')
 loginButton.click()
-sleep(2)
+sleep(3)
 success = driver.find_element(By.CSS_SELECTOR, '#flash').text
 print(success)
 driver.quit()
