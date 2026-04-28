@@ -18,8 +18,6 @@ class MainPage:
             self.wait.until(EC.visibility_of_element_located(
                 (By.CSS_SELECTOR, selector))).click()
 
-    def checkout(self):
+    def goto_cart(self):
         self.wait.until(EC.presence_of_element_located(
             (By.CLASS_NAME, 'shopping_cart_link'))).click()
-        self.wait.until(EC.presence_of_element_located(
-            (By.ID, 'checkout'))).click()
